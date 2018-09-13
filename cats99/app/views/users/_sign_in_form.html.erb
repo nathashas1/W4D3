@@ -1,0 +1,24 @@
+<% if flash[:errors] %>
+<ul>
+  <% flash[:errors].each do |error| %>
+    <li> <%= error %></li>
+  <% end %>
+</ul>
+<% end %>
+<% if type == :new %>
+  <form action="<%= users_url %>" method="post">
+  </form>
+<% else %>
+  <form action="<%= session_url %>" method="post">
+  <% end %>
+  <label>Username: 
+    <input type="text" name="user[user_name]" value="<%= user.user_name %>">
+  </label>
+  <br><br>
+  <label>Password: 
+    <input type="text" name="user[password]" value="">
+  </label>
+  <br><br>
+  <input type="submit" name="" value="Submit">
+  
+</form>
